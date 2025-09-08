@@ -1,0 +1,72 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: "{{target.schema}}_raw"
+    tables:
+      - name: address
+        external:
+          location: "gs://{{target.project}}-landing/address/*.csv"
+          options:
+            format: csv
+            connection_name: "{{ var('biglake_connection_name') }}"
+      - name: country_region
+        external:
+          location: "gs://{{target.project}}-landing/country_region/*.csv"
+          options:
+            format: csv
+            connection_name: "{{ var('biglake_connection_name') }}"
+      - name: credit_card
+        external:
+          location: "gs://{{target.project}}-landing/credit_card/*.csv"
+          options:
+            format: csv
+            connection_name: "{{ var('biglake_connection_name') }}"
+      - name: customer
+        external:
+          location: "gs://{{target.project}}-landing/customer/*.csv"
+          options:
+            format: csv
+            connection_name: "{{ var('biglake_connection_name') }}"
+      - name: person
+        external:
+          location: "gs://{{target.project}}-landing/person/*.csv"
+          options:
+            format: csv
+            connection_name: "{{ var('biglake_connection_name') }}"
+      - name: product
+        external:
+          location: "gs://{{target.project}}-landing/product/*.csv"
+          options:
+            format: csv
+            connection_name: "{{ var('biglake_connection_name') }}"
+      - name: product_category
+        external:
+          location: "gs://{{target.project}}-landing/product_category/*.csv"
+          options:
+            format: csv
+            connection_name: "{{ var('biglake_connection_name') }}"
+      - name: product_subcategory
+        external:
+          location: "gs://{{target.project}}-landing/product_subcategory/*.csv"
+          options:
+            format: csv
+            connection_name: "{{ var('biglake_connection_name') }}"
+      - name: sales_order_detail
+        external:
+          location: "gs://{{target.project}}-landing/sales_order_detail/*.csv"
+          options:
+            format: csv
+            connection_name: "{{ var('biglake_connection_name') }}"
+      - name: sales_order_header
+        external:
+          location: "gs://{{target.project}}-landing/sales_order_header/*.csv"
+          options:
+            format: csv
+            connection_name: "{{ var('biglake_connection_name') }}"
+      - name: state_province
+        external:
+          location: "gs://{{target.project}}-landing/state_province/*.csv"
+          options:
+            format: csv
+            connection_name: "{{ var('biglake_connection_name') }}"

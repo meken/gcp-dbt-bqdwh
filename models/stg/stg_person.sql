@@ -1,0 +1,8 @@
+{{ config(materialized='table', schema='curated', tags=['staging']) }}
+
+SELECT 
+    DISTINCT * EXCEPT(hobby, comments, birth_date, date_first_purchase),
+    SAFE.PARSE_DATE("%FZ", birth_date) AS birth_date,
+    SAFE.PARSE_DATE("%FZ", date_first_purchase) AS date_first_purchase
+FROM
+    {{ source('raw', 'person') }}
