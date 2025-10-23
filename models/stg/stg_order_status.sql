@@ -1,4 +1,4 @@
-{{ config(materialized='table', tags=['staging']) }}
+{{ config(materialized='table') }}
 
 SELECT 
     DISTINCT Status as status
