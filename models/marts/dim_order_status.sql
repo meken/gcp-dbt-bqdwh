@@ -1,4 +1,4 @@
-{{ config(materialized='table', schema='dwh', tags=['dimension']) }}
+{{ config(materialized='table') }}
 
 SELECT
   {{ dbt_utils.generate_surrogate_key(['status']) }} AS order_status_key,

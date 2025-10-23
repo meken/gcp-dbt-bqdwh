@@ -1,4 +1,4 @@
-{{ config(materialized='table', schema='dwh', tags=['dimension']) }}
+{{ config(materialized='table') }}
 
 SELECT
   {{ dbt_utils.generate_surrogate_key(['address_id']) }} AS address_key,
