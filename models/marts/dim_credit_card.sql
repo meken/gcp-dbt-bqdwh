@@ -1,4 +1,4 @@
-{{ config(materialized='table', schema='dwh', tags=['dimension']) }}
+{{ config(materialized='table') }}
 
 SELECT
   {{ dbt_utils.generate_surrogate_key(['credit_card_id']) }} AS credit_card_key,

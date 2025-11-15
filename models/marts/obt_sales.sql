@@ -1,7 +1,6 @@
 {{ config(
     materialized='table',
-    schema='dwh',
-    tags=['obt'],
+    
     partition_by={
       'field': 'order_date',
       'data_type': 'date',

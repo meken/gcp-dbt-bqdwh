@@ -1,4 +1,4 @@
-{{ config(materialized='table', schema='curated', tags=['staging']) }}
+{{ config(materialized='table') }}
 
 SELECT 
     DISTINCT * EXCEPT(comment, order_date, ship_date, due_date), 
