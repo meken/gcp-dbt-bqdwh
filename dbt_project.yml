@@ -11,6 +11,11 @@ seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
+# flags:
+#   warn_error_options:
+#     silence:
+#       - ConstraintNotEnforced
+
 clean-targets:
   - "target"
   - "dbt_packages"
