@@ -3,6 +3,9 @@ version: 2
 models:
   - name: stg_order_status
     description: "Staging for order status values from raw.sales_order_header"
+    config:
+      tags: ["staging"]
+      schema: curated
     columns:
       - name: status
         description: "Numeric status code from the source"
@@ -10,6 +13,9 @@ models:
 
   - name: stg_person
     description: "Staging for person data (some date fields parsed)"
+    config:
+      tags: ["staging"]
+      schema: curated
     columns:
       - name: business_entity_id
       - name: first_name
@@ -20,18 +26,27 @@ models:
       - name: total_purchase_ytd
 
   - name: stg_credit_card
+    config:
+      tags: ["staging"]
+      schema: curated
     description: "Staging for credit card source data"
     columns:
       - name: credit_card_id
       - name: card_type
 
   - name: stg_country_region
+    config:
+      tags: ["staging"]
+      schema: curated
     description: "Staging for country/region source data"
     columns:
       - name: country_region_code
       - name: name
 
   - name: stg_sales_order_detail
+    config:
+      tags: ["staging"]
+      schema: curated
     description: "Staging for sales order detail rows"
     columns:
       - name: sales_order_id
@@ -42,6 +57,9 @@ models:
       - name: order_qty
 
   - name: stg_sales_order_header
+    config:
+      tags: ["staging"]
+      schema: curated
     description: "Staging for sales order headers (dates cast to DATE)"
     columns:
       - name: sales_order_id
@@ -51,6 +69,9 @@ models:
       - name: status
 
   - name: stg_product_subcategory
+    config:
+      tags: ["staging"]
+      schema: curated
     description: "Staging for product subcategory"
     columns:
       - name: product_subcategory_id
@@ -58,6 +79,9 @@ models:
       - name: name
 
   - name: stg_state_province
+    config:
+      tags: ["staging"]
+      schema: curated
     description: "Staging for state/province source data"
     columns:
       - name: state_province_id
@@ -65,6 +89,9 @@ models:
       - name: name
 
   - name: stg_product
+    config:
+      tags: ["staging"]
+      schema: curated
     description: "Staging for product source data"
     columns:
       - name: product_id
@@ -74,6 +101,9 @@ models:
       - name: product_subcategory_id
 
   - name: stg_customer
+    config:
+      tags: ["staging"]
+      schema: curated
     description: "Staging for customer source data"
     columns:
       - name: customer_id
@@ -81,12 +111,18 @@ models:
       - name: store_id
 
   - name: stg_product_category
+    config:
+      tags: ["staging"]
+      schema: curated
     description: "Staging for product category source data"
     columns:
       - name: product_category_id
       - name: name
 
   - name: stg_address
+    config:
+      tags: ["staging"]
+      schema: curated
     description: "Staging for address source data"
     columns:
       - name: address_id
